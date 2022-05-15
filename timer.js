@@ -61,16 +61,12 @@ const SetTimer = async (value) => {
     const timeout = 1; // Посекундный вывод
     let promise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            const sec = value.date - Date.now();
-            if (sec > 0) {
+            const milliSec = value.date - Date.now();
+            if (milliSec > 0) {
                 // Вывод в терминал состояния таймеров (сколько осталось)
-                console.log(`${value.name}: ${getIntervalFromSeconds(Math.trunc(sec / 1000))}`);
-                const value3 = {
-                    name: value.name,
-                    date: value.date
-                };
+                console.log(`${value.name}: ${getIntervalFromSeconds(Math.trunc(milliSec / 1000))}`);
                 // Следующий запуск обработчика
-                emitterObject.emit(value.name, value3);
+                emitterObject.emit(value.name, value);
             } else {
                 console.log(colors.green(`${value.name}: Таймер завершил работу`));
             }
