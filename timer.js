@@ -1,3 +1,7 @@
+/**
+ * Урок 2. Цикл событий. События в Node.js
+ */
+
 import EventEmitter from "events";
 import colors from "colors";
 
