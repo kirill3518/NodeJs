@@ -11,6 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0"
-  }
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.4",
+    "yargs": "^17.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirill3518/NodeJs.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kirill3518/NodeJs/issues"
+  },
+  "homepage": "https://github.com/kirill3518/NodeJs#readme"
 }
