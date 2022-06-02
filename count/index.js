@@ -1,3 +1,15 @@
+/**
+ * Урок 6. Библиотека Socket.io. Workers в Node.js
+ * 
+ * Скрипт счетчика и файлового менеджера на сокетах.
+ * Чтение директории и файлов вынесена в отдельный поток воркера
+ * 
+ * Пример запуска скрипта из текущего каталога count: node index.js
+ * 
+ * Пример задания директории для файлового менеджера: http://localhost:3000/D://Distr
+ * Пример задания файла для файлового менеджера: http://localhost:3000/D://Distr//example.txt
+ */
+
 const http = require("http");
 const path = require("path");
 const fs = require("fs");

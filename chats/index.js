@@ -1,19 +1,15 @@
 /**
  * Урок 6. Библиотека Socket.io. Workers в Node.js
  * 
- * Пример запуска скрипта: node chats/index.js
+ * Скрипт чата на сокетах
+ * Пример запуска скрипта из текущего каталога chats: node index.js
  */
 
 const io = require('socket.io');
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
-// const { workerData, parentPort } = require('worker_threads');
 const crypto = require('crypto');
-
-// const password = crypto.randomBytes(4).toString('hex');
-// parentPort.postMessage({ result: `Password was generated: ${password}` });
-
 
 const app = http.createServer((request, response) => {
     if (request.method === 'GET') {
