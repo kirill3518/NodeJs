@@ -18,7 +18,9 @@ const { Worker } = require('worker_threads');
 
 function start(workerData) {
     return new Promise((resolve, reject) => {
-        const worker = new Worker('./worker.js', { workerData });
+        const filePath = path.join(__dirname, 'worker.js');
+        // console.log(21, filePath);
+        const worker = new Worker(filePath, { workerData });
         worker.on('message', resolve);
         worker.on('error', reject);
     })
@@ -30,12 +32,11 @@ const app = http.createServer((request, response) => {
     if (request.method === 'GET') {
 
         if (request.url === '/') {
-            let [currentPath] = process.argv.slice(1, 2);
-            currentPath = currentPath.match(/([\w:\.]*\\)+/g).join();
-            currentPath = currentPath.replace(/\\/g, '//');
-            dir = currentPath;
+            dir = __dirname;
+            // console.log(39, dir);
         } else {
             dir = request.url.replace(/\//, ''); // удалить первый / из адреса
+            // console.log(42, dir);
         }
 
         const filePath = path.join(__dirname, 'index.html');
